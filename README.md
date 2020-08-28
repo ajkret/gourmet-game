@@ -20,5 +20,5 @@ Digite no console, a partir da pasta do projeto
 
 A classe GameInterface foi ignorada, por problemas para criar mocks para JOptionPane
 
-[sonar-evidence.png](Evidência)
+[Evidência](./sonar-evidence.png)
 
