@@ -14,7 +14,7 @@ import net.ajkret.gourmet.service.GameMachine.State;
 public class GameInterface {
 
   private final Charset utf8charset = Charset.forName("UTF-8");
-  private final Charset iso88591charset = Charset.forName("ISO-8859-1");
+  private final Charset currentCharset = Charset.defaultCharset();
   private final GameMachine gameMachine;
 
   public GameInterface() {
@@ -36,7 +36,7 @@ public class GameInterface {
 
   private String toIso(final String message) {
     CharBuffer interim = utf8charset.decode(ByteBuffer.wrap(message.getBytes()));
-    ByteBuffer result = iso88591charset.encode(interim);
+    ByteBuffer result = currentCharset.encode(interim);
     return new String(result.array());
   }
 
