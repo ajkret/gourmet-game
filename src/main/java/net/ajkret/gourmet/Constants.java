@@ -9,4 +9,5 @@ public class Constants {
   public final static String INVALID_TYPE = "Informe o tipo de prato";
   public static final String INVALID_PLATE = "Informe o prato corretamente";
   public static final String OUT_OF_GUESSES = "Sem palpites";
+  public static final String GAME = "Jogo Gourmet";
 }

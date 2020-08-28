@@ -2,10 +2,12 @@ package net.ajkret.gourmet.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -55,6 +57,7 @@ public class GameMachineTest {
 
     assertEquals(cake.getType(), result.getGuess());
     assertEquals(GameMachine.GuessType.TYPE, result.getGuessType());
+    assertTrue(result.getNames().contains(result.getGuess()));
   }
 
   @Test
@@ -64,6 +67,13 @@ public class GameMachineTest {
 
     assertEquals(cake.getType(), result.getGuess());
     assertEquals(GameMachine.GuessType.TYPE, result.getGuessType());
+    assertTrue(result.getNames().contains(result.getGuess()));
+  }
+
+  @Test
+  public void shouldInsertNewPlate() {
+    fixture.addPlate(cake.getName(), cake.getType());
+    verify(repository).add(any(Plate.class));
   }
 
   @Test

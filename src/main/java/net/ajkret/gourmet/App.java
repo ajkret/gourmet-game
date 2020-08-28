@@ -1,11 +1,14 @@
 package net.ajkret.gourmet;
 
-public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+import javax.swing.UIManager;
+import lombok.SneakyThrows;
+import net.ajkret.gourmet.view.GameInterface;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+public class App {
+
+  @SneakyThrows
+  public static void main(String[] args) {
+    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    new GameInterface().run();
+  }
 }

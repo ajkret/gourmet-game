@@ -35,6 +35,7 @@ public class GameMachine {
     State state = new State();
     state.setGuess(getFirstTypeOrInitRepo());
     state.setGuessType(GuessType.TYPE);
+    state.getNames().add(state.getGuess());
     return state;
   }
 
@@ -63,6 +64,7 @@ public class GameMachine {
     state.getNames().add(state.getGuess());
     return state;
   }
+
   // Look for the next Plate of type
   private State guessNextPlate(final State state) {
     List<String> types = repository.findByType(state.getType()).stream().map(Plate::getName).collect(Collectors.toList());
@@ -70,6 +72,13 @@ public class GameMachine {
     state.setGuess(types.stream().filter(item -> !state.getNames().contains(item)).findFirst().orElseThrow(() -> new GameException(Constants.OUT_OF_GUESSES)));
     state.getNames().add(state.getGuess());
     return state;
+  }
+
+  public void addPlate(String plateName, String plateType) {
+    Plate plate = new Plate();
+    plate.setName(plateName);
+    plate.setType(plateType);
+    repository.add(plate);
   }
 
   @Getter
