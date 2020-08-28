@@ -10,4 +10,5 @@ public class Constants {
   public static final String INVALID_PLATE = "Informe o prato corretamente";
   public static final String OUT_OF_GUESSES = "Sem palpites";
   public static final String GAME = "Jogo Gourmet";
+  public static final String END_GAME = "Fim de Jogo";
 }

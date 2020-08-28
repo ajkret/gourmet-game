@@ -58,7 +58,7 @@ sonarqube {
     properties {
         property "sonar.exclusions", [
                 "**/net/ajkret/gourmet/App.java",
-                "**/net/ajkret/gourmet/view/GameInterface.java",
+                "**/net/ajkret/gourmet/view/SystemInterface.java",
 
         ]
     }
