@@ -16,6 +16,10 @@ Digite no console, a partir da pasta do projeto
 
     java -jar build/libs/gourmet-game.jar
     
+Por comodidade, existe uma cópia do jar na pasta principal
+
+    java -jar gourmet-game.jar
+    
 # Evidencia de cobertura de testes
 
 A classe GameInterface foi ignorada, por problemas para criar mocks para JOptionPane
